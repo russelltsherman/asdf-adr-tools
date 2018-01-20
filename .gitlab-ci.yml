@@ -8,5 +8,5 @@ adfs plugin-test:
   script:
     - asdf plugin-add adr-tools ./
     - asdf list-all adr-tools
-    - asdf plugin-test adr-tools ./ 'adr-tools --version'
+    - asdf plugin-test adr-tools ./ 'adr help'
 

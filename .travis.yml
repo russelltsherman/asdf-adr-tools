@@ -5,7 +5,7 @@ before_script:
 script: 
   - asdf plugin-add adr-tools ./
   - asdf list-all adr-tools
-  - asdf plugin-test adr-tools ./ 'adr-tools --version'
+  - asdf plugin-test adr-tools ./ 'adr help'
 os:
   - linux
   - osx
