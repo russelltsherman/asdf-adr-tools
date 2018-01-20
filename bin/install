@@ -20,9 +20,10 @@ install() {
   mkdir -p "${bin_install_path}"
 
   echo "Downloading adr-tools from ${download_url}"
-  curl -sL "$download_url" -o "$bin_path"
+  curl -sL "$download_url" | tar -xz
+  mv adr-tools-${version}/src "$bin_path"
   chmod +x "$bin_path"
+  rm -rf adr-tools-${version}
 }
 
 install "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH" 
-
