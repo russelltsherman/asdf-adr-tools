@@ -16,7 +16,7 @@ install() {
   local download_url="https://github.com/npryce/adr-tools/archive/${version}.tar.gz"
 
   echo "-- Downloading adr-tools from ${download_url}"
-  curl -sL "$download_url" | tar xz
+  curl -fsSL "$download_url" | tar xz
   mv adr-tools-${version}/src $install_path/bin
   rm -rf adr-tools-${version}
 }
