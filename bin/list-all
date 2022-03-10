@@ -9,7 +9,7 @@ gh_repo="adr-tools"
 
 list_versions() {
   cmd="curl -fsSL"
-  [ -n "$GITHUB_API_TOKEN" ] && cmd="$cmd --header 'Authorization: token $GITHUB_API_TOKEN'"
+  [ -n "${GITHUB_API_TOKEN:-}" ] && cmd="$cmd --header 'Authorization: token $GITHUB_API_TOKEN'"
   cmd="$cmd https://api.github.com/repos/$gh_org/$gh_repo/releases"
 
   eval "$cmd" | grep -oE "tag_name\": *\".{1,15}\"," | sed 's/tag_name\": *\"//;s/\",//'
